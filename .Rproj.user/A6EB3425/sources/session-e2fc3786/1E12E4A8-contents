@@ -3,8 +3,15 @@
 #'
 #' @param data
 #' @param useParallel
-#'
-#' @return
+#' "Impute and prepare a dataframe to apply the 'find_racialcomplex' function, in case the dataframe has missing values. The imputation is done with random forests."
+#' "The database must have the same variables as those in 'bdMaiz.rds' in this same package."
+#' @return \code{impute_data()}
+#' returns a dataframe without missing values.
+#' @author Rafael Nieves-Alvarez (\email{rafles091@@gmail.com}), Arturo Sanchez-Porras,
+#'  Aline Romero-Natale, Otilio Arturo Acevedo-Sandoval
+#' @references
+#' @seealso
+#' [find_racialcomplex()]
 #' @export
 #'
 #' @examples
