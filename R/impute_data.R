@@ -1,21 +1,35 @@
-# Impute the data
-#' Title
+#' Impute the data implementing random forest for native corn data.
 #'
-#' @param data
-#' @param useParallel
-#' "Impute and prepare a dataframe to apply the 'find_racialcomplex' function, in case the dataframe has missing values. The imputation is done with random forests."
-#' "The database must have the same variables as those in 'bdMaiz.rds' in this same package."
-#' @return \code{impute_data()}
-#' returns a dataframe without missing values.
+#' "Impute and prepare a dataframe to apply the \code{find_racialcomplex()} function,
+#' in case the dataframe has missing values. The imputation is done with random
+#'  forests. The database must have the same variables as those in \code{bdMaiz.rds}
+#' in this same package."
+#'
+#' @param data An incomplete dataset that contains qualitative and quantitative
+#' characteristics of a corn or series of corns. The selected characteristics
+#' are related to colors, some measurements and the locations in which the corn
+#'  was grown. A template for what has to be filled will be included in the
+#'  GitHub page of the project.
+#' @param useParallel Logical. Perform the analysis in parallel? Defaults to FALSE.
+#'
+#' @return \code{impute_data()}returns an imputed dataset that can be used with
+#'  \code{find_racialcomplex()}.
+#'
 #' @author Rafael Nieves-Alvarez (\email{rafles091@@gmail.com}), Arturo Sanchez-Porras,
 #'  Aline Romero-Natale, Otilio Arturo Acevedo-Sandoval
 #' @references
 #' @seealso
 #' [find_racialcomplex()]
 #' @export
+#' @import parallel
+#' @import doSNOW
+#' @import missForest
+#' @importFrom dplyr bind_rows
+#'
 #'
 #' @examples
-impute_data <- function(data, useParallel = TRUE){
+#' impute_data(data24)
+impute_data <- function(data, useParallel = FALSE){
   # Load the original dataset so that input data can be imputed with these parameters
   load("./data/bdMaiz.rds")
 

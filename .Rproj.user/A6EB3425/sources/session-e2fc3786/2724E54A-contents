@@ -1,8 +1,11 @@
 Package: imanr
 Type: Package
-Title: What the Package Does (Title Case)
+Title: Identify the Racial Complex of a Native Corn from Mexico
 Version: 0.1.0
-Author: Who wrote it
+Author: c(person("Rafael","Nieves-Alvarez",email="rafles091@gmail.com
+",role=c("aut","cre")),
+person("Arturo","Sanchez-Porras",email="sp.arturo@gmail.com",
+role="aut",comment=c(ORCID="0000-0002-1691-286X"))
 Maintainer: The package maintainer <yourself@somewhere.net>
 Description: More about what it does (maybe more than one line)
     Use four spaces when indenting paragraphs within the Description.

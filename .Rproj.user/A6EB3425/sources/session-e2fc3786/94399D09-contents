@@ -1,7 +1,6 @@
 #' Identify the racial complex of a native corn from Mexico
 #'
-#' @param data
-#' A dataset that contains qualitative and quantitative characteristics of a corn or series of corns.
+#' @param data A dataset that contains qualitative and quantitative characteristics of a corn or series of corns.
 #'  The selected characteristics are related to colors, some measurements and the locations in which
 #'  the corn was grown. A template for what has to be filled will be included in the GitHub page of the project.
 #'
