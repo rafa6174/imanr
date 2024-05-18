@@ -17,7 +17,9 @@
 #'
 #' @author Rafael Nieves-Alvarez (\email{rafles091@@gmail.com}), Arturo Sanchez-Porras,
 #'  Aline Romero-Natale, Otilio Arturo Acevedo-Sandoval
-#' @references
+#' @references Báez Vergara, K. J. Estimación de datos faltantes a través de
+#' redes neuronales, una comparación con métodos simpes y múltiples (Doctoral
+#' dissertation, Universidad Santo Tomás).
 #' @seealso
 #' [find_racialcomplex()]
 #' @export

@@ -22,6 +22,12 @@ Identify the racial complex of a native corn from Mexico
 \examples{
 findracialcomplex(data20)
 }
+\references{
+James, G., Witten, D., Hastie, T., & Tibshirani, R. (2013).
+An introduction to statistical learning: With applications in R (1a ed.). Springer.\\
+Kuhn, M., & Johnson, K. (2013). Applied predictive modeling (1a ed.). Springer.\\
+Monroy, L. G. D. (2007). Estadística Multivariada: Inferencia y Métodos. Univ. Nacional.
+}
 \seealso{
 [impute_data()]
 }

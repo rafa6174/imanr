@@ -28,6 +28,11 @@ in this same package."
 \examples{
 impute_data(data24)
 }
+\references{
+Báez Vergara, K. J. Estimación de datos faltantes a través de
+redes neuronales, una comparación con métodos simpes y múltiples (Doctoral
+dissertation, Universidad Santo Tomás).
+}
 \seealso{
 [find_racialcomplex()]
 }

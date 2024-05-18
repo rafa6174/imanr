@@ -1,26 +1,26 @@
 {
-    "id": "2724E54A",
+    "id": "A72EFA02",
     "path": "~/Documentos/GitHub/imanr/DESCRIPTION",
     "project_path": "DESCRIPTION",
     "type": "dcf",
     "hash": "0",
     "contents": "",
-    "dirty": true,
-    "created": 1715791653998.0,
+    "dirty": false,
+    "created": 1715990703045.0,
     "source_on_save": false,
     "relative_order": 6,
     "properties": {
         "source_window_id": "",
         "Source": "Source",
-        "cursorPosition": "0,0",
-        "scrollLine": "0"
+        "cursorPosition": "35,51",
+        "scrollLine": "22"
     },
     "folds": "",
-    "lastKnownWriteTime": 1715791235,
+    "lastKnownWriteTime": 1715995253,
     "encoding": "UTF-8",
     "collab_server": "",
     "source_window": "",
-    "last_content_update": 1715792256368,
+    "last_content_update": 1715995253,
     "read_only": false,
     "read_only_alternatives": []
 }

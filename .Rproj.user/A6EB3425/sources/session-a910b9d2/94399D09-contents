@@ -8,7 +8,10 @@
 #' returns a racial complex classification for the dataset or single observation that the user entered
 #' @author Rafael Nieves-Alvarez (\email{rafles091@@gmail.com}), Arturo Sanchez-Porras,
 #'  Aline Romero-Natale, Otilio Arturo Acevedo-Sandoval
-#' @references
+#' @references James, G., Witten, D., Hastie, T., & Tibshirani, R. (2013).
+#' An introduction to statistical learning: With applications in R (1a ed.). Springer.\\
+#' Kuhn, M., & Johnson, K. (2013). Applied predictive modeling (1a ed.). Springer.\\
+#' Monroy, L. G. D. (2007). Estadística Multivariada: Inferencia y Métodos. Univ. Nacional.
 #' @seealso
 #' [impute_data()]
 #' @aliases findracialcomplex
