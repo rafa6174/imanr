@@ -20,7 +20,7 @@ Author: c(person("Rafael","Nieves-Alvarez",
                   comment=c(ORCID="0000-0003-0475-7003")))
 Maintainer: Rafael Nieves-Alvarez <rafles091@gmail.com>
 Description: 'imanr' provides researchers with a powerful tool for the classification
-    and study of native corn by aiding in the identification of racial complexes
+    and study of native corn by aiding in the identification of racial complexes,
     which are fundamental to Mexico's agriculture and culture. This package has been
     developed based on data collected by 'Proyecto Global de Maíces Nativos México',
     which has conducted exhaustive surveys across the country to document the

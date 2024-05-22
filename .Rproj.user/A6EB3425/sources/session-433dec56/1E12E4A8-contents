@@ -7,18 +7,18 @@
 #'
 #' @param data An incomplete dataset that contains qualitative and quantitative
 #' characteristics of a corn or series of corns. The selected characteristics
-#' are related to colors, some measurements and the locations in which the corn
-#'  was grown. A template for what has to be filled will be included in the
+#' are related to colors, some measurements, and the locations in which the corn
+#'  was grown. A template for what has to be filled will be included on the
 #'  GitHub page of the project.
 #' @param useParallel Logical. Perform the analysis in parallel? Defaults to FALSE.
 #'
 #' @return \code{impute_data()}returns an imputed dataset that can be used with
 #'  \code{find_racialcomplex()}.
 #'
-#' @author Rafael Nieves-Alvarez (\email{rafles091@@gmail.com}), Arturo Sanchez-Porras,
+#' @author Rafael Nieves-Alvarez (\email{nievesalvarez1618@@gmail.com}), Arturo Sanchez-Porras,
 #'  Aline Romero-Natale, Otilio Arturo Acevedo-Sandoval
 #' @references Báez Vergara, K. J. Estimación de datos faltantes a través de
-#' redes neuronales, una comparación con métodos simpes y múltiples (Doctoral
+#' redes neuronales, una comparación con métodos simples y múltiples (Doctoral
 #' dissertation, Universidad Santo Tomás).
 #' @seealso
 #' [find_racialcomplex()]

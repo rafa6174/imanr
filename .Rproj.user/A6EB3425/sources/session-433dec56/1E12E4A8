@@ -3,7 +3,7 @@
     "path": "~/Documentos/GitHub/imanr/R/impute_data.R",
     "project_path": "R/impute_data.R",
     "type": "r_source",
-    "hash": "0",
+    "hash": "1475635928",
     "contents": "",
     "dirty": false,
     "created": 1715355209141.0,
@@ -12,15 +12,15 @@
     "properties": {
         "source_window_id": "",
         "Source": "Source",
-        "cursorPosition": "21,3",
-        "scrollLine": "0"
+        "cursorPosition": "20,54",
+        "scrollLine": "12"
     },
     "folds": "",
-    "lastKnownWriteTime": 1715989670,
+    "lastKnownWriteTime": 1716391078,
     "encoding": "UTF-8",
     "collab_server": "",
     "source_window": "",
-    "last_content_update": 1715989670504,
+    "last_content_update": 1716391078730,
     "read_only": false,
     "read_only_alternatives": []
 }
