@@ -20,10 +20,10 @@ are related to colors, some measurements and the locations in which the corn
  \code{find_racialcomplex()}.
 }
 \description{
-"Impute and prepare a dataframe to apply the \code{find_racialcomplex()} function,
+Impute and prepare a dataframe to apply the \code{find_racialcomplex()} function,
 in case the dataframe has missing values. The imputation is done with random
  forests. The database must have the same variables as those in \code{bdMaiz.rds}
-in this same package."
+in this same package.
 }
 \examples{
 impute_data(data24)
