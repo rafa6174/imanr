@@ -32,13 +32,12 @@ Description: A model that provides researchers with a powerful tool for the clas
 License: GPL (>= 3)
 Encoding: UTF-8
 LazyData: true
-RoxygenNote: 7.2.3
+LazyDataCompression: xz
+RoxygenNote: 7.3.1
 Imports: 
-    missForest, stats, dplyr
+    missForest, stats, dplyr, parallel, doSNOW
 Suggests: 
     testthat (>= 3.0.0),
-    parallel,
-    doSNOW,
     knitr,
     rmarkdown
 Config/testthat/edition: 3

@@ -22,16 +22,16 @@ are related to colors, some measurements, and the locations in which the corn
 \description{
 Impute and prepare a dataframe to apply the \code{find_racialcomplex()} function,
 in case the dataframe has missing values. The imputation is done with random
- forests. The database must have the same variables as those in \code{bdMaiz.rds}
+forests. The database must have the same variables as those in \code{bdMaiz.rds}
 in this same package.
 }
 \examples{
 impute_data(data24)
 }
 \references{
-Báez Vergara, K. J. Estimación de datos faltantes a través de
-redes neuronales, una comparación con métodos simples y múltiples (Doctoral
-dissertation, Universidad Santo Tomás).
+B<c3><a1>ez Vergara, K. J. Estimaci<c3><b3>n de datos faltantes a trav<c3><a9>s de
+redes neuronales, una comparaci<c3><b3>n con m<c3><a9>todos simpes y m<c3><ba>ltiples (Doctoral
+dissertation, Universidad Santo Tom<c3><a1>s).
 }
 \seealso{
 [find_racialcomplex()]

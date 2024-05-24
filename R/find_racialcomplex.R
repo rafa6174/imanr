@@ -21,11 +21,12 @@
 #' @importFrom stats predict
 #'
 #' @examples
-#' findracialcomplex(data20)
+#' find_racial_complex(data20)
+
 find_racial_complex <- function(data){
   # Load required data
-  load("./data/Modelo_RF_8083.RData")
-  load("./data/PreProcess.rds")
+  data("Modelo_RF_8083")
+  data("PreProcess")
 
   # Preprocess the data and then run it through the Random Forest model
   processed.data <- predict(preProcValues, data)

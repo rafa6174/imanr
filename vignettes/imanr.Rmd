@@ -17,7 +17,7 @@ knitr::opts_chunk$set(
   message = FALSE
 )
 
-# library(imanr)
+library(imanr)
 ```
 
 # imanr: Identificador de Maíz Nativo en R
@@ -25,7 +25,7 @@ knitr::opts_chunk$set(
 ## Introduction
 
 |                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                 |                                        |
-|------------------------------------------------------------|------------|
+|--------------------------------------------------------|----------------|
 | **imanr** is a novel machine learning package to help producers and researchers on the identification of racial complexes for native corn from Mexico which is fundamental to enhance the understanding of the distribution and characteristics of native corn in Mexico's agriculture. The package was developed thanks to the information collected by CONABIO for the [Proyecto Global de Maíces Nativos de México](https://www.biodiversidad.gob.mx/diversidad/proyectoMaices) whose goal was to update the available information on the many different corn varieties, their geographic origin and the implications to maize genetic diversity. There are many documents that were published with this information, and so, this package aims to expand the reach of this national project by allowing for pinpointing, with a high accuracy level, the most plausible racial complexes for a corn sample. | ![](images/hex-imanr.png){width="250"} |
 
 ## Usage
@@ -36,8 +36,8 @@ The package is composed of two functions: `find_racial_complex()` and `impute_da
 
 The main function in the package. In this we have loaded the machine learning model that computes the classification for the corn sample that is being fed to the function. The function takes only one argument which is a dataframe including qualitative and quantitative characteristics of the corn as can be seen in the included data:
 
-```{r show_data_template, eval = FALSE}
-load("data20")
+```{r show_data_template}
+data("data20")
 
 # Necessary fields
 names(data20)
@@ -47,22 +47,39 @@ These are the required fields for the model to work properly. In future versions
 
 Once the data is loaded, it can be tested with the model and the results will show the racial complex to which each sample belongs to.
 
-```{r using find_racial_complex, eval = FALSE}
+```{r using_find_racial_complex, eval=FALSE}
 # test for racial complexes
 find_racial_complex(data20)
+
+#> [1] Tropicales tardíos  Dentados tropicales Dentados tropicales Dentados tropicales
+#> [5] Dentados tropicales Dentados tropicales Dentados tropicales Dentados tropicales
+#> [9] Dentados tropicales Dentados tropicales Dentados tropicales Dentados tropicales
+#> [13] Dentados tropicales Dentados tropicales Dentados tropicales Dentados tropicales
+#> [17] Dentados tropicales Dentados tropicales Tropicales tardíos  Dentados tropicales
+#> [21] Dentados tropicales Dentados tropicales Dentados tropicales Dentados tropicales
+#> [25] Dentados tropicales Dentados tropicales Dentados tropicales Dentados tropicales
+#> [29] Dentados tropicales Dentados tropicales Dentados tropicales
+#> 7 Levels: Chapalote Cónico Dentados tropicales Ocho hileras ... Tropicales tardíos
 ```
 
 ### impute_data()
 
 This function is complementary, and it aids the user to impute the missing data by comparing the absent fields with the full information from the Proyecto Nacional de Maíz Nativo database and then filling the gaps with adequate data that is computed through a random forests approach. The function takes two arguments, (1) `data` the dataset with missing information and which should have the same columns as the data that will be used for working with `find_racial_complex()`, and (2) `useParallel`, which can be helpful as the process can be intensive in terms of computation times and therefore the option to use parallel computing was added to improve the life quality of the user.
 
-```{r using impute_data, eval = FALSE}
+```{r using_impute_data, eval=FALSE}
 # testing the function
-imputed_data24 <- impute_data(data24, useParallel = FALSE)
-imputed_data24
+imputed_data24 <- impute_data(data24, useParallel = TRUE)
 
 # test for racial complexes
 find_racial_complex(imputed_data24)
+
+#>  [1] Dentados tropicales Dentados tropicales Dentados tropicales Dentados tropicales
+#>  [5] Dentados tropicales Dentados tropicales Dentados tropicales Dentados tropicales
+#>  [9] Cónico              Cónico              Cónico              Cónico             
+#>  [13] Ocho hileras        Dentados tropicales Dentados tropicales Dentados tropicales
+#>  [17] Dentados tropicales Cónico              Cónico              Cónico             
+#>  [21] Cónico              Cónico              Cónico              Cónico             
+#>  7 Levels: Chapalote Cónico Dentados tropicales Ocho hileras ... Tropicales tardíos
 ```
 
 ## Contact
@@ -89,7 +106,7 @@ install.packages("imanr")
 
 Load **imanr** package:
 
-```{r loading the package, eval = FALSE}
+```{r loading_the_package, eval = FALSE}
 library(imanr)
 ```
 

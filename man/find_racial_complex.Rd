@@ -22,7 +22,7 @@ returns a racial complex classification for the dataset or single observation th
 Identify the racial complex of a native corn from Mexico
 }
 \examples{
-findracialcomplex(data20)
+find_racial_complex(data20)
 }
 \references{
 James, G., Witten, D., Hastie, T., & Tibshirani, R. (2013).
