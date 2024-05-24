@@ -84,7 +84,7 @@ find_racial_complex(imputed_data24)
 
 ## Contact
 
--   Rafael Nieves-Alvarez ([email](rafles091@gmail.com))
+-   Rafael Nieves-Alvarez ([email](nievesalvarez1618@gmail.com))
 -   Arturo Sanchez-Porras ([email](sp.arturo@gmail.com))
 -   Aline Romero-Natale ([email](ronatale@gmail.com))
 -   Otilio Arturo Acevedo-Sandoval ([email](acevedo@uaeh.edu.mx))

@@ -3,7 +3,7 @@ Type: Package
 Title: Identify the Racial Complex of Native Corns From Mexico
 Version: 0.1.0
 Author: c(person("Rafael","Nieves-Alvarez",
-                  email="rafles091@gmail.com",
+                  email="nievesalvarez1618@gmail.com",
                   role=c("aut","cre"),
                   comment=c(ORCID="0009-0002-8016-1412")),
           person("Arturo","Sanchez-Porras",
