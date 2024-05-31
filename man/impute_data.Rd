@@ -26,12 +26,13 @@ forests. The database must have the same variables as those in \code{bdMaiz.rds}
 in this same package.
 }
 \examples{
+data("data24")
 impute_data(data24)
 }
 \references{
-B<c3><a1>ez Vergara, K. J. Estimaci<c3><b3>n de datos faltantes a trav<c3><a9>s de
-redes neuronales, una comparaci<c3><b3>n con m<c3><a9>todos simpes y m<c3><ba>ltiples (Doctoral
-dissertation, Universidad Santo Tom<c3><a1>s).
+Báez Vergara, K. J. Estimación de datos faltantes a través de
+redes neuronales, una comparación con métodos simpes y múltiples (Doctoral
+dissertation, Universidad Santo Tomás).
 }
 \seealso{
 [find_racialcomplex()]
