@@ -15,7 +15,7 @@ Data available on the website: <https://biodiversidad.gob.mx/diversidad/proyecto
 CONABIO. 2011. Proyecto Global de Maíces Nativos. Comisión Nacional para el Conocimiento y Uso de la Biodiversidad; Instituto Nacional de Investigaciones Forestales, Agrícolas y Pecuarias; Instituto Nacional de Ecología y cambio Climático. México. https://biodiversidad.gob.mx/diversidad/proyectoMaices.
 }
 \examples{
-data("data20")
+data("data24")
 
 }
 \keyword{examples}
