@@ -37,10 +37,10 @@ The package is composed of two functions: `find_racial_complex()` and `impute_da
 The main function in the package. In this we have loaded the machine learning model that computes the classification for the corn sample that is being fed to the function. The function takes only one argument which is a dataframe including qualitative and quantitative characteristics of the corn as can be seen in the included data:
 
 ```{r show_data_template}
-data("data20")
+data("data31")
 
 # Necessary fields
-names(data20)
+names(data31)
 ```
 
 These are the required fields for the model to work properly. In future versions of this package we will work on the flexibility of what can be done and how can it be done.
@@ -49,7 +49,7 @@ Once the data is loaded, it can be tested with the model and the results will sh
 
 ```{r using_find_racial_complex, eval=FALSE}
 # test for racial complexes
-find_racial_complex(data20)
+find_racial_complex(data31)
 
 #> [1] Tropicales tardíos  Dentados tropicales Dentados tropicales Dentados tropicales
 #> [5] Dentados tropicales Dentados tropicales Dentados tropicales Dentados tropicales
@@ -100,7 +100,7 @@ library(devtools)
 install_github(repo = "rafa6174/imanr", build_vignettes = TRUE)
 
 #> From CRAN (recommended)
-install.packages("imanr")
+# install.packages("imanr") # not just yet...
 
 ```
 
