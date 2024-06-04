@@ -21,11 +21,14 @@ testing <- bdMaiz[-inTraining, c(3:64)] |> as.data.frame()
 # Prepare the preProcess values
 # We selected centering, scaling, and process zero variance data,
 # imputation is not done because we prepared a different function for that
-preProcValues <- caret::preProcess(training,
-                                   method = c("center", "scale", "zv"))
+PreProcess <- caret::preProcess(training,
+                                method = c("center", "scale", "zv"))
 
-trainTransformed <- caret::predict(preProcValues, training)
-testTransformed <- caret::predict(preProcValues, testing)
+trainTransformed <- predict(PreProcess, training) |> imanr::impute_data(useParallel = TRUE)
+testTransformed <- predict(PreProcess, testing) |> imanr::impute_data(useParallel = TRUE)
+
+trainTransformed <- imanr::impute_data(training, useParallel = TRUE)
+testTransformed <- imanr::impute_data(testing, useParallel = TRUE)
 
 # Train the model, waiting for the best to happen ----
 set.seed(42)
@@ -40,7 +43,7 @@ grid <- expand.grid(.mtry = c(2, 4, 6, 8, 10),  # Number of considered variables
                     .min.node.size = c(1)  # Minimun node size
 )
 
-fit_RF <- caret::train(as.factor(Complejo.racial) ~.,
+Model_RF_8083 <- caret::train(as.factor(Complejo.racial) ~.,
                 data = trainTransformed,
                 method = "ranger",
                 preProcess = c("center", "scale", "zv"),
@@ -48,21 +51,23 @@ fit_RF <- caret::train(as.factor(Complejo.racial) ~.,
                 tuneGrid = grid,
                 verbose = TRUE)
 
-print(fit_RF)
-plot(fit_RF)
+print(Model_RF_8083)
+plot(Model_RF_8083)
 
 # Testing the model
-p_RF <- caret::predict(fit_RF, newdata = testTransformed)
+p_RF <- predict(Model_RF_8083, newdata = testTransformed)
 confMat_RF <- caret::confusionMatrix(p_RF, as.factor(testTransformed$Complejo.racial))
 confMat_RF$overall["Accuracy"]
 
 # Save the model
-# save(fit_RF, file = "./R/Modelo_RF_8083.RData")
+# save(Model_RF_8083, file = "./R/Model_RF_8083.rda")
 
 # Make slices of data for testing and using in examples ----
-data20 <- bdMaiz[c(120:151), c(4:64)]
+data31 <- bdMaiz[c(120:151), c(4:64)]
 
 data24 <- bdMaiz[c(164:187), c(4:64)]
 
-# This line was already here... ----
-usethis::use_data(sysdata, overwrite = TRUE)
+usethis::use_data(PreProcess, Model_RF_8083, bdMaiz,
+                  internal = TRUE,
+                  overwrite = TRUE,
+                  compress = "xz")

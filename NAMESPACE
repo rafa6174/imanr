@@ -2,8 +2,9 @@
 
 export(find_racial_complex)
 export(impute_data)
+import(caret)
 import(doSNOW)
 import(missForest)
 import(parallel)
+import(ranger)
 importFrom(dplyr,bind_rows)
-importFrom(stats,predict)

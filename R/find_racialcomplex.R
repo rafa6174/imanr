@@ -18,17 +18,17 @@
 #' [impute_data()]
 #' @aliases findracialcomplex
 #' @export
-#' @importFrom stats predict
+#' @import caret
+#' @import ranger
 #'
 #' @examples
-#' data("data20")
-#' find_racial_complex(data20)
+#' find_racial_complex(data31)
 
 find_racial_complex <- function(data){
-  # data(preProcValues, package = "imanr")
+
   # Preprocess the data and then run it through the Random Forest model
-  processed.data <- predict(preProcValues, data)
-  prediction <- stats::predict(fit_RF, processed.data)
+  # processed.data <- predict(PreProcess, data)
+  prediction <- predict(Model_RF_8083, data)
 
   return(prediction)
 }
