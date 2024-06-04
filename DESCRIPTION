@@ -22,7 +22,7 @@ Maintainer: Rafael Nieves-Alvarez <rafles091@gmail.com>
 Description: A model that provides researchers with a powerful tool for the classification
     and study of native corn by aiding in the identification of racial complexes
     which are fundamental to Mexico's agriculture and culture. This package has been
-    developed based on data collected by 'Proyecto Global de Maíces Nativos México',
+    developed based on data collected by "Proyecto Global de Maíces Nativos México",
     which has conducted exhaustive surveys across the country to document the
     qualitative and quantitative characteristics of different types of native maize.
     The trained model uses a robust and diverse dataset, enabling it to achieve an

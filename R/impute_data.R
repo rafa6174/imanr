@@ -18,7 +18,7 @@
 #' @author Rafael Nieves-Alvarez (\email{nievesalvarez1618@@gmail.com}), Arturo Sanchez-Porras,
 #'  Aline Romero-Natale, Otilio Arturo Acevedo-Sandoval
 #' @references Báez Vergara, K. J. Estimación de datos faltantes a través de
-#' redes neuronales, una comparación con métodos simpes y múltiples (Doctoral
+#' redes neuronales, una comparación con métodos simples y múltiples (Doctoral
 #' dissertation, Universidad Santo Tomás).
 #' @seealso
 #' [find_racialcomplex()]
@@ -34,9 +34,6 @@
 #' impute_data(data24)
 
 impute_data <- function(data, useParallel = FALSE){
-  # Load the original dataset so that input data can be imputed with these parameters
-  # data("bdMaiz", package = "imanr")
-
   # data is bound to the original dataset and then imputed
   if(useParallel){
     # If parallel computing is allowed the function will work faster

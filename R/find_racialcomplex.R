@@ -26,8 +26,7 @@
 
 find_racial_complex <- function(data){
 
-  # Preprocess the data and then run it through the Random Forest model
-  # processed.data <- predict(PreProcess, data)
+  # Run data through the Random Forest model
   prediction <- predict(Model_RF_8083, data)
 
   return(prediction)
