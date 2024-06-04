@@ -1,25 +1,28 @@
 
-# imanr: Identifying Racial Complexes for Native Corn in R <a href="https://github.com/rafa6174/imanr"><img src="vignettes/images/hex-imanr.png" aligh="right" height="138" /></a>
-
 <!-- badges: start -->
+<!-- [![R-CMD-check](https://github.com/rafa6174/imanr/actions/workflows/R-CMD-check.yaml/badge.svg)](https://github.com/rafa6174/imanr/actions/workflows/R-CMD-check.yaml) -->
 
-[![R-CMD-check](https://github.com/rafa6174/imanr/actions/workflows/R-CMD-check.yaml/badge.svg)](https://github.com/rafa6174/imanr/actions/workflows/R-CMD-check.yaml)
 [![License](https://img.shields.io/badge/License-GPL3-blue.svg)](https://github.com/rafa6174/imanr/blob/master/LICENSE.md)
-<!-- [![CRAN/METACRAN](https://img.shields.io/cran/v/ecocbo)](https://cran.r-project.org/package=ecocbo) -->
-[![GitHub R package version (subdirectory of
-monorepo)](https://img.shields.io/github/r-package/v/rafa6174/imanr)](https://github.com/rafa6174/imanr/tree/main)
-<!-- ![CRAN downloads](https://cranlogs.r-pkg.org/badges/grand-total/imanr?color=yellow) -->
+![GitHub R package
+version](https://img.shields.io/badge/R-v0.1.0-orange)
 
+<!-- [![CRAN/METACRAN](https://img.shields.io/cran/v/ecocbo)](https://cran.r-project.org/package=ecocbo) -->
+<!-- [![GitHub R package version](https://img.shields.io/github/r-package/v/rafa6174/imanr)](https://github.com/rafa6174/imanr) -->
+<!-- ![CRAN downloads](https://cranlogs.r-pkg.org/badges/grand-total/imanr?color=yellow) -->
 <!-- badges: end -->
 
-## Identificador de Maíz Nativo en R
+# imanr <a href="https://github.com/rafa6174/imanr"><img src="vignettes/images/hex-imanr.png" align="right" height="138" /></a>
 
-imanr is model that provides researchers with a powerful tool for the
-classification and study of native corn by aiding in the identification
-of racial complexes which are fundamental to Mexico’s agriculture and
-culture.
+## Identifying Racial Complexes for Native Corn in R
 
-## Installation
+### Identificador de Maíz Nativo en R
+
+**imanr** is model that provides researchers with a powerful tool for
+the classification and study of native corn by aiding in the
+identification of racial complexes which are fundamental to Mexico’s
+agriculture and culture.
+
+### Installation
 
 ``` r
 # As of today, you can install the development version from GitHub:
@@ -27,7 +30,7 @@ culture.
 devtools::install_github("rafa6174/imanr")
 ```
 
-## Usage
+### Usage
 
 The package is composed of two functions: `find_racial_complex()` and
 `impute_data()`.
@@ -57,11 +60,11 @@ find_racial_complex(data31)
 #> 7 Levels: Chapalote Cónico Dentados tropicales Ocho hileras ... Tropicales tardíos
 ```
 
-## R packages required for running imanr
+### R packages required for running imanr
 
 - Required: missForest, caret, ranger, dplyr, parallel, doSNOW
 
-## Participating institutions
+### Participating institutions
 
 ![](vignettes/images/logoCONACYT.png)
 
