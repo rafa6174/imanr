@@ -26,8 +26,9 @@ forests. The database must have the same variables as those in \code{bdMaiz.rds}
 in this same package.
 }
 \examples{
-data("data24")
+\donttest{
 impute_data(data24)
+}
 }
 \references{
 Báez Vergara, K. J. Estimación de datos faltantes a través de

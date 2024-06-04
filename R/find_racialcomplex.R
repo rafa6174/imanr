@@ -18,6 +18,7 @@
 #' [impute_data()]
 #' @aliases findracialcomplex
 #' @export
+#' @importFrom stats predict
 #' @import caret
 #' @import ranger
 #'

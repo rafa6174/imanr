@@ -7,8 +7,11 @@
 version](https://img.shields.io/badge/R-v0.1.0-orange)
 
 <!-- [![CRAN/METACRAN](https://img.shields.io/cran/v/ecocbo)](https://cran.r-project.org/package=ecocbo) -->
-<!-- [![GitHub R package version](https://img.shields.io/github/r-package/v/rafa6174/imanr)](https://github.com/rafa6174/imanr) -->
+
+[![GitHub R package
+version](https://img.shields.io/github/r-package/v/rafa6174/imanr)](https://github.com/rafa6174/imanr)
 <!-- ![CRAN downloads](https://cranlogs.r-pkg.org/badges/grand-total/imanr?color=yellow) -->
+
 <!-- badges: end -->
 
 # imanr <a href="https://github.com/rafa6174/imanr"><img src="vignettes/images/hex-imanr.png" align="right" height="138" /></a>
@@ -66,7 +69,7 @@ find_racial_complex(data31)
 
 ### Participating institutions
 
-![](vignettes/images/logoCONACYT.png)
+![](man/figures/logoCONACYT.png)
 
-<img src="vignettes/images/logoUAEH.png" height="121" />
-<img src="vignettes/images/logoENES.png" height="121" />
+<img src="man/figures/logoUAEH.png" height="121" />
+<img src="man/figures/logoENES.png" height="121" />

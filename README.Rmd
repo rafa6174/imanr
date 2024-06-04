@@ -17,7 +17,7 @@ output: github_document
 knitr::opts_chunk$set(
   collapse = TRUE,
   comment = "#>",
-  fig.path = "vignettes/images/"
+  fig.path = "man/figures/README-"
 )
 # library(imanr)
 ```
@@ -63,9 +63,9 @@ find_racial_complex(data31)
 * Required:  missForest, caret, ranger, dplyr, parallel, doSNOW
 
 ### Participating institutions
-![](vignettes/images/logoCONACYT.png)
+![](man/figures/logoCONACYT.png)
 
-![](vignettes/images/logoUAEH.png){height="121"} ![](vignettes/images/logoENES.png){height="121"}
+![](man/figures/logoUAEH.png){height="121"} ![](man/figures/logoENES.png){height="121"}
 
 
 

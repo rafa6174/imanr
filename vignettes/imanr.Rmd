@@ -47,7 +47,7 @@ These are the required fields for the model to work properly. In future versions
 
 Once the data is loaded, it can be tested with the model and the results will show the racial complex to which each sample belongs to.
 
-```{r using_find_racial_complex, eval=FALSE}
+```{r using_find_racial_complex}
 # test for racial complexes
 find_racial_complex(data31)
 
@@ -72,14 +72,6 @@ imputed_data24 <- impute_data(data24, useParallel = TRUE)
 
 # test for racial complexes
 find_racial_complex(imputed_data24)
-
-#>  [1] Dentados tropicales Dentados tropicales Dentados tropicales Dentados tropicales
-#>  [5] Dentados tropicales Dentados tropicales Dentados tropicales Dentados tropicales
-#>  [9] Cónico              Cónico              Cónico              Cónico             
-#>  [13] Ocho hileras        Dentados tropicales Dentados tropicales Dentados tropicales
-#>  [17] Dentados tropicales Cónico              Cónico              Cónico             
-#>  [21] Cónico              Cónico              Cónico              Cónico             
-#>  7 Levels: Chapalote Cónico Dentados tropicales Ocho hileras ... Tropicales tardíos
 ```
 
 ## Contact
