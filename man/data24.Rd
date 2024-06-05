@@ -18,4 +18,4 @@ CONABIO. 2011. Proyecto Global de Maíces Nativos. Comisión Nacional para el Co
 data("data24")
 
 }
-\keyword{examples}
+\keyword{examples,dataset}
