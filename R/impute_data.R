@@ -17,9 +17,9 @@
 #'
 #' @author Rafael Nieves-Alvarez (\email{nievesalvarez1618@@gmail.com}), Arturo Sanchez-Porras,
 #'  Aline Romero-Natale, Otilio Arturo Acevedo-Sandoval
-#' @references B<c3><a1>ez Vergara, K. J. Estimaci<c3><b3>n de datos faltantes a trav<c3><a9>s de
-#' redes neuronales, una comparaci<c3><b3>n con m<c3><a9>todos simpes y m<c3><ba>ltiples (Doctoral
-#' dissertation, Universidad Santo Tom<c3><a1>s).
+#' @references Báez Vergara, K. J. Estimación de datos faltantes a través de
+#' redes neuronales, una comparación con métodos simples y múltiples (Doctoral
+#' dissertation, Universidad Santo Tomás).
 #' @seealso
 #' [find_racialcomplex()]
 #' @export
@@ -30,11 +30,11 @@
 #'
 #'
 #' @examples
+#' \donttest{
 #' impute_data(data24)
-impute_data <- function(data, useParallel = FALSE){
-  # Load the original dataset so that input data can be imputed with these parameters
-  data("bdMaiz")
+#' }
 
+impute_data <- function(data, useParallel = FALSE){
   # data is bound to the original dataset and then imputed
   if(useParallel){
     # If parallel computing is allowed the function will work faster
@@ -53,7 +53,7 @@ impute_data <- function(data, useParallel = FALSE){
   # Data is cropped from the imputation dataset and then some variables are mutated
   revised.data <- imp.data$ximp[c(18568:(18567+dim(data)[1])),]
   revised.data[,"Hileras.por.mazorca"] <- round(revised.data[, "Hileras.por.mazorca"])
-  revised.data[,"Di<c3><a1>metro.longitud.de.la.mazorca_recalculado"] <- revised.data[,"Diametro.de.mazorca"] / revised.data[,"Longitud.de.mazorca"]
+  revised.data[,"Di\u00E1metro.longitud.de.la.mazorca_recalculado"] <- revised.data[,"Diametro.de.mazorca"] / revised.data[,"Longitud.de.mazorca"]
 
   return(revised.data)
 }

@@ -1,7 +1,7 @@
 #' Identify the racial complex of a native corn from Mexico
 #'
 #' @param data A dataset that contains qualitative and quantitative characteristics
-#' of a ear of corn or series of ear of corns. The selected characteristics are related
+#' of a corn ear or series of ears. The selected characteristics are related
 #'  to colors, some measurements and the locations in which the corn was grown.
 #'  A template for what has to be filled will be included on the GitHub page of
 #'  the project.
@@ -19,18 +19,16 @@
 #' @aliases findracialcomplex
 #' @export
 #' @importFrom stats predict
+#' @import caret
+#' @import ranger
 #'
 #' @examples
-#' find_racial_complex(data20)
+#' find_racial_complex(data31)
 
 find_racial_complex <- function(data){
-  # Load required data
-  data("Modelo_RF_8083")
-  data("PreProcess")
 
-  # Preprocess the data and then run it through the Random Forest model
-  processed.data <- predict(preProcValues, data)
-  prediction <- predict(fit_RF, processed.data)
+  # Run data through the Random Forest model
+  prediction <- predict(Model_RF_8083, data)
 
   return(prediction)
 }

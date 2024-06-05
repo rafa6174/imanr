@@ -1,14 +1,14 @@
 Package: imanr
 Type: Package
 Title: Identify the Racial Complex of Native Corns From Mexico
-Version: 0.1.0
+Version: 0.1.0.9000
 Author: c(person("Rafael","Nieves-Alvarez",
                   email="nievesalvarez1618@gmail.com",
                   role=c("aut","cre"),
                   comment=c(ORCID="0009-0002-8016-1412")),
           person("Arturo","Sanchez-Porras",
                   email="sp.arturo@gmail.com",
-                  role="aut",
+                  role=c("aut", "cph"),
                   comment=c(ORCID="0000-0002-1691-286X")),
           person("Aline","Romero-Natale",
                   email="natalearn@gmail.com",
@@ -22,7 +22,7 @@ Maintainer: Rafael Nieves-Alvarez <rafles091@gmail.com>
 Description: A model that provides researchers with a powerful tool for the classification
     and study of native corn by aiding in the identification of racial complexes
     which are fundamental to Mexico's agriculture and culture. This package has been
-    developed based on data collected by 'Proyecto Global de Maíces Nativos México',
+    developed based on data collected by "Proyecto Global de Maíces Nativos México",
     which has conducted exhaustive surveys across the country to document the
     qualitative and quantitative characteristics of different types of native maize.
     The trained model uses a robust and diverse dataset, enabling it to achieve an
@@ -35,10 +35,12 @@ LazyData: true
 LazyDataCompression: xz
 RoxygenNote: 7.3.1
 Imports: 
-    missForest, stats, dplyr, parallel, doSNOW
+    missForest, caret, ranger, dplyr, parallel, doSNOW
 Suggests: 
     testthat (>= 3.0.0),
     knitr,
     rmarkdown
 Config/testthat/edition: 3
 VignetteBuilder: knitr
+Depends: 
+    R (>= 2.10)
