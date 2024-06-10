@@ -19,10 +19,3 @@ testthat::test_that("no error documentation",{
   expect_silent(help("impute_data"))
 })
 
-# testthat::test_that("the function executes in less than five muntes",{
-#   start_time<-Sys.time()
-#   result<-impute_data(data24)
-#   end_time<-Sys.time()
-#   execution_time<-as.numeric(difftime(end_time,start_time,units = "mins"))
-#   expect_lt(execution_time,5)
-# })
