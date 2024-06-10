@@ -3,7 +3,7 @@
 
 [![License](https://img.shields.io/badge/License-GPL3-blue.svg)](https://github.com/rafa6174/imanr/blob/master/LICENSE.md)
 [![GitHub R package
-version](https://img.shields.io/github/r-package/v/rafa6174/imanr)](https://github.com/rafa6174/imanr)
+version](https://img.shields.io/github/r-package/v/rafa6174/imanr/master)](https://github.com/rafa6174/imanr)
 [![R-CMD-check](https://github.com/rafa6174/imanr/actions/workflows/R-CMD-check.yaml/badge.svg)](https://github.com/rafa6174/imanr/actions/workflows/R-CMD-check.yaml)
 <!-- [![CRAN/METACRAN](https://img.shields.io/cran/v/ecocbo)](https://cran.r-project.org/package=ecocbo) -->
 <!--  [![GitHub R package version](https://img.shields.io/badge/R-v1.0.0-orange)](https://github.com/rafa6174/imanr) -->
