@@ -1,17 +1,31 @@
-## resubmission
-This is a resubmission. In this version we have:
+## Resubmission
+
+── R CMD check results ────────────────────────────────── imanr 1.0.1 ────
+Duration: 19m 22.6s
+
+❯ checking installed package size ... NOTE
+    installed size is  6.2Mb
+    sub-directories of 1Mb or more:
+      R   5.6Mb
+
+0 errors ✔ | 0 warnings ✔ | 1 note ✖
+
+This is a resubmission. The following updates have been made:
 
 - Possibly misspelled words in DESCRIPTION: 
-  - (Nativos, Proyecto, ces, de, xico, Maíces, México) The original data with which the model was trained comes from a project titled "Proyecto Global de Maíces Nativos de México", thus these words are not misspelled in the DESCRIPTION.
-  - (morphometric) Morphometrics refers to the quantitative analysis of form, which is a concept that encompasses both the size and shape of an organism or organ. https://www.sciencedirect.com/topics/medicine-and-dentistry/morphometrics https://www.merriam-webster.com/medical/morphometrics
-- Author field should be Authors@R.  Current value is:
-  - The field was fixed.
-- Found the following (possibly) invalid URLs:
-  - The URL is updated and validated. https://github.com/rafa6174/imanr/blob/main/LICENSE.md
-- Found the following (possibly) invalid URIs:
-  - The email addresses were adjusted.  
+  - **Nativos, Proyecto, ces, de, xico, Maíces, México:** These words are not misspelled as they are part of the official title "Proyecto Global de Maíces Nativos de México" from where the data to train the model comes from.
+  - **morphometric:** The term [Morphometrics](https://www.merriam-webster.com/medical/morphometrics) refers to the quantitative analysis of form, which is a concept that encompasses both the size and shape of an organism or organ.  However, for clarity, it has been changed to 'physical' in the DESCRIPTION.
+- Author field should be Authors@R.
+  - This field has been updated to use the correct format.
+- Found the following (possibly) invalid URLs: ...
+  - The URL is updated and validated. [License](https://github.com/rafa6174/imanr/blob/main/LICENSE.md) 
+- Found the following (possibly) invalid URIs: ...
+  - Email addresses have been formatted correctly using `mailto:` links.
 - The Title field should be in title case.
-  - The title was corrected
+  - The title has been corrected to use title case.
+- Uses the superseded package: 'doSNOW'
+  - The code has been updated to use 'doParallel' instead of 'doSNOW' for better performance and compatibility.
+
 ── R CMD check results ───────────────────────────────────────── imanr 1.0.0 ────
 Duration: 11m 26.4s
 

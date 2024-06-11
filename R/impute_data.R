@@ -24,7 +24,8 @@
 #' [find_racialcomplex()]
 #' @export
 #' @import parallel
-#' @import doSNOW
+#' @import doParallel
+#' @import foreach
 #' @import missForest
 #' @importFrom dplyr bind_rows
 #'
@@ -37,14 +38,18 @@
 impute_data <- function(data, useParallel = FALSE){
   # data is bound to the original dataset and then imputed
   if(useParallel){
-    # If parallel computing is allowed the function will work faster
+    # Configure the cluster for parallelization
     cl <- parallel::makeCluster(parallel::detectCores() - 2)
-    doSNOW::registerDoSNOW(cl)
+    doParallel::registerDoParallel(cl)
 
-    parallel::clusterExport(cl, list("missForest"))
+    # Check that foreach backend is registered
+    # foreach::getDoParRegistered()
 
     imp.data <- bind_rows(bdMaiz[, c(4:64)], data) |>
       missForest::missForest(parallelize = "forests", verbose = TRUE)
+
+    # Stop the cluster after computation
+    parallel::stopCluster(cl)
   } else {
     imp.data <- bind_rows(bdMaiz[, c(4:64)], data) |>
       missForest::missForest(verbose = TRUE)

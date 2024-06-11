@@ -35,7 +35,7 @@ LazyData: true
 LazyDataCompression: xz
 RoxygenNote: 7.3.1
 Imports: 
-    missForest, caret, ranger, dplyr, parallel, doSNOW
+    missForest, caret, ranger, dplyr, parallel, doParallel, foreach
 Suggests: 
     testthat (>= 3.0.0),
     knitr,
