@@ -21,7 +21,7 @@ knitr::opts_chunk$set(
 
 # imanr <a href="https://github.com/rafa6174/imanr"><img src="vignettes/images/hex-imanr.png" align="right" height="138" /></a>
 
-## Identify the Racial Complex of Native Corns From Mexico
+## Identify the Racial Complex of Native Corns from Mexico
 ### Identificador de Maíz Nativo en R
 
 **imanr** is  model that provides researchers with a powerful tool for the classification and study of native corn by aiding in the identification of racial complexes which are fundamental to Mexico's agriculture and culture.

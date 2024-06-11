@@ -1,8 +1,8 @@
 ---
-title: "imanr: Identify the Racial Complex of Native Corns From Mexico"
+title: "imanr: Identify the Racial Complex of Native Corns from Mexico"
 output: rmarkdown::html_vignette
 vignette: >
-  %\VignetteIndexEntry{Identify the Racial Complex of Native Corns From Mexico}
+  %\VignetteIndexEntry{Identify the Racial Complex of Native Corns from Mexico}
   %\VignetteEncoding{UTF-8}
   %\VignetteEngine{knitr::rmarkdown}
 editor_options: 

@@ -12,7 +12,7 @@ version](https://img.shields.io/github/r-package/v/rafa6174/imanr/master)](https
 
 # imanr <a href="https://github.com/rafa6174/imanr"><img src="vignettes/images/hex-imanr.png" align="right" height="138" /></a>
 
-## Identify the Racial Complex of Native Corns From Mexico
+## Identify the Racial Complex of Native Corns from Mexico
 
 ### Identificador de Maíz Nativo en R
 

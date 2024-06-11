@@ -1,6 +1,6 @@
 Package: imanr
 Type: Package
-Title: Identify the Racial Complex of Native Corns From Mexico
+Title: Identify the Racial Complex of Native Corns from Mexico
 Version: 1.0.1
 Authors@R: c(person("Rafael","Nieves-Alvarez",
                   email="nievesalvarez1618@gmail.com",
