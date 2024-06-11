@@ -1,3 +1,12 @@
+## resubmission
+This is a resubmission. In this version we have:
+
+- Possibly misspelled words in DESCRIPTION: 
+  - (Nativos, Proyecto, ces, de, xico, Maíces, México) The original data with which the model was trained comes from a project titled "Proyecto Global de Maíces Nativos de México", thus these words are not misspelled in the DESCRIPTION.
+  -(morphometric) Morphometrics refers to the quantitative analysis of form, which is a concept that encompasses both the size and shape of an organism or organ. https://www.sciencedirect.com/topics/medicine-and-dentistry/morphometrics https://www.merriam-webster.com/medical/morphometrics
+-Author field should be Authors@R.  Current value is:
+  -The field was fixed.
+
 ── R CMD check results ───────────────────────────────────────── imanr 1.0.0 ────
 Duration: 11m 26.4s
 

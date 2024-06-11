@@ -1,4 +1,4 @@
-#' Identify the racial complex of a native corn from Mexico
+#' Identify The Racial Complex of a Native Corn From Mexico
 #'
 #' @param data A dataset that contains qualitative and quantitative characteristics
 #' of a corn ear or series of ears. The selected characteristics are related

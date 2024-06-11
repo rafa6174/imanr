@@ -2,7 +2,7 @@ Package: imanr
 Type: Package
 Title: Identify the Racial Complex of Native Corns From Mexico
 Version: 1.0.0
-Author: c(person("Rafael","Nieves-Alvarez",
+Authors@R: c(person("Rafael","Nieves-Alvarez",
                   email="nievesalvarez1618@gmail.com",
                   role=c("aut","cre"),
                   comment=c(ORCID="0009-0002-8016-1412")),
@@ -28,7 +28,7 @@ Description: A model that provides researchers with a powerful tool for the clas
     The trained model uses a robust and diverse dataset, enabling it to achieve an
     80% accuracy in classifying maize racial complexes. The characteristics included
     in the analysis comprise geographic location, grain and cob colors, as well as
-    various morphometric measurements, such as lengths and widths.
+    various physical measurements, such as lengths and widths.
 License: GPL (>= 3)
 Encoding: UTF-8
 LazyData: true
