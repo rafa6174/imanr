@@ -1,6 +1,7 @@
 ~%2FDocumentos%2FGitHub%2Fimanr%2FDESCRIPTION="CB983C4D"
 ~%2FDocumentos%2FGitHub%2Fimanr%2FLICENSE.md="C3BAB78D"
 ~%2FDocumentos%2FGitHub%2Fimanr%2FNAMESPACE="CC0635E9"
+~%2FDocumentos%2FGitHub%2Fimanr%2FNEWS.md="DD7C4AB5"
 ~%2FDocumentos%2FGitHub%2Fimanr%2FR%2Ffind_racialcomplex.R="F0CBCB1E"
 ~%2FDocumentos%2FGitHub%2Fimanr%2FR%2Fhello.R="59651049"
 ~%2FDocumentos%2FGitHub%2Fimanr%2FR%2Fimpute_data.R="A80B9A4E"
@@ -16,3 +17,4 @@
 ~%2FDocumentos%2FGitHub%2Fimanr%2Ftests%2Ftestthat%2Ftest-impute_data.R="006316BE"
 ~%2FDocumentos%2FGitHub%2Fimanr%2Ftests%2Ftestthat%2Ftest-imputeedata.R="52C524AF"
 ~%2FDocumentos%2FGitHub%2Fimanr%2Ftests%2Ftestthat.R="20FC69CF"
+~%2FDocumentos%2FGitHub%2Fimanr%2Fvignettes%2Fimanr.Rmd="56AA574A"

@@ -3,7 +3,7 @@
 \name{find_racial_complex}
 \alias{find_racial_complex}
 \alias{findracialcomplex}
-\title{Identify the racial complex of a native corn from Mexico}
+\title{Identify The Racial Complex of a Native Corn From Mexico}
 \usage{
 find_racial_complex(data)
 }
@@ -19,7 +19,7 @@ of a corn ear or series of ears. The selected characteristics are related
 returns a racial complex classification for the dataset or single observation that the user entered
 }
 \description{
-Identify the racial complex of a native corn from Mexico
+Identify The Racial Complex of a Native Corn From Mexico
 }
 \examples{
 find_racial_complex(data31)

@@ -1,8 +1,8 @@
 ---
-title: "iman: Identify racial complexes of native corn in Mexico"
+title: "imanr: Identify the Racial Complex of Native Corns From Mexico"
 output: rmarkdown::html_vignette
 vignette: >
-  %\VignetteIndexEntry{Identify racial complexes of native corn in Mexico}
+  %\VignetteIndexEntry{Identify the Racial Complex of Native Corns From Mexico}
   %\VignetteEncoding{UTF-8}
   %\VignetteEngine{knitr::rmarkdown}
 editor_options: 
@@ -76,10 +76,10 @@ find_racial_complex(imputed_data24)
 
 ## Contact
 
--   Rafael Nieves-Alvarez ([email](nievesalvarez1618@gmail.com))
--   Arturo Sanchez-Porras ([email](sp.arturo@gmail.com))
--   Aline Romero-Natale ([email](ronatale@gmail.com))
--   Otilio Arturo Acevedo-Sandoval ([email](acevedo@uaeh.edu.mx))
+-   Rafael Nieves-Alvarez ([email](mailto:nievesalvarez1618@gmail.com))
+-   Arturo Sanchez-Porras ([email](mailto:sp.arturo@gmail.com))
+-   Aline Romero-Natale ([email](mailto:ronatale@gmail.com))
+-   Otilio Arturo Acevedo-Sandoval ([email](mailto:acevedo@uaeh.edu.mx))
 
 ## imanr package installation
 

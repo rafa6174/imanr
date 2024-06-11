@@ -1,7 +1,7 @@
 
 <!-- badges: start -->
 
-[![License](https://img.shields.io/badge/License-GPL3-blue.svg)](https://github.com/rafa6174/imanr/blob/master/LICENSE.md)
+[![License](https://img.shields.io/badge/License-GPL3-blue.svg)](https://github.com/rafa6174/imanr/blob/main/LICENSE.md)
 [![GitHub R package
 version](https://img.shields.io/github/r-package/v/rafa6174/imanr/master)](https://github.com/rafa6174/imanr)
 [![R-CMD-check](https://github.com/rafa6174/imanr/actions/workflows/R-CMD-check.yaml/badge.svg)](https://github.com/rafa6174/imanr/actions/workflows/R-CMD-check.yaml)
@@ -12,7 +12,7 @@ version](https://img.shields.io/github/r-package/v/rafa6174/imanr/master)](https
 
 # imanr <a href="https://github.com/rafa6174/imanr"><img src="vignettes/images/hex-imanr.png" align="right" height="138" /></a>
 
-## Identifying Racial Complexes for Native Corn in R
+## Identify the Racial Complex of Native Corns From Mexico
 
 ### Identificador de Maíz Nativo en R
 
