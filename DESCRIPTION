@@ -18,7 +18,7 @@ Authors@R: c(person("Rafael","Nieves-Alvarez",
                   email="acevedo@uaeh.edu.mx",
                   role="aut",
                   comment=c(ORCID="0000-0003-0475-7003")))
-Maintainer: Rafael Nieves-Alvarez <rafles091@gmail.com>
+Maintainer: Rafael Nieves-Alvarez <nievesalvarez1618@gmail.com>
 Description: A model that provides researchers with a powerful tool for the classification
     and study of native corn by aiding in the identification of racial complexes
     which are fundamental to Mexico's agriculture and culture. This package has been
