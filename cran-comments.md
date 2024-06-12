@@ -1,8 +1,12 @@
-## Resubmission
+## Resubmission 2
 Thank you for reviewing our package submission. We have carefully considered the note regarding possibly misspelled words in the DESCRIPTION file. We would like to clarify the following:
 
 - **Maíces, México, Nativos, Proyecto**, de: These words are part of the official project title "Proyecto Global de Maíces Nativos de México". This project is a well-recognized initiative in the study and preservation of native maize in Mexico. Therefore, these terms are not misspellings but are used correctly within this specific context.
+
 - **ces, xico**: These are likely fragments of "Maíces" and "México", respectively, which are part of the same project title. The full terms "Maíces" and "México" are correctly spelled and used in context.
+
+## Resubmission 1
+
 ── R CMD check results ────────────────────────────────── imanr 1.0.1 ────
 Duration: 19m 22.6s
 
