@@ -22,7 +22,8 @@ returns a racial complex classification for the dataset or single observation th
 Identify the Racial Complex of native corn from Mexico
 }
 \examples{
-find_racial_complex(data31)
+df <- find_racial_complex(data31)
+df
 }
 \references{
 James, G., Witten, D., Hastie, T., & Tibshirani, R. (2013).

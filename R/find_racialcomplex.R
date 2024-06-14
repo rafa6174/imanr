@@ -23,7 +23,8 @@
 #' @import ranger
 #'
 #' @examples
-#' find_racial_complex(data31)
+#' df <- find_racial_complex(data31)
+#' df
 
 find_racial_complex <- function(data){
 

@@ -1,7 +1,7 @@
 ## Resubmission 3
 
 ── R CMD check results ────────────────────────────────────────────────────── imanr 1.0.1 ────
-Duration: 9m 52.6s
+Duration: 4m 33.7s
 
 ❯ checking installed package size ... NOTE
     installed size is  5.8Mb
@@ -13,11 +13,11 @@ Duration: 9m 52.6s
 Thanks for reviewing our package submission. In consideration for the received comments we have:
 
 - Pls reduce to less than 5 MB.
-  - Due to the nature of the model included in the sysdata.rda file, which is essential for the primary functionality of the package, we were unable to reduce the size below 5 MB despite extensive efforts to compress and optimize the data. The model, a RandomForest implemented using the ranger package, originally exceeds 50 MB but has been reduced to 5.5 MB within the sysdata.rda file. This model is crucial for the accurate and efficient performance of the package. Externalizing it would significantly degrade the user experience by requiring additional steps for data acquisition. Therefore, we kindly request an exemption from the size limit due to these technical constraints and the importance of maintaining the package's functionality and user convenience.
+  - Due to the nature of the model included in the 'sysdata.rda' file, which is essential for the primary functionality of the package, we were unable to reduce the size below 5 MB despite extensive efforts to compress and optimize the data. The model, a RandomForest implemented using the `ranger` package, originally exceeds 50 MB but has been reduced to 5.5 MB within the 'sysdata.rda' file. This model is crucial for the accurate and efficient performance of the package. Externalizing it would significantly degrade the user experience by requiring additional steps for data acquisition. Therefore, we kindly request an exemption from the size limit due to these technical constraints and the importance of maintaining the package's functionality and user convenience.
 - Non-standard file/directory found at top level: 'cran-comments.html'
-  - As suggested, the file cran-comments.html has been included in the .Rbuildignore file to ensure it does not interfere with the package building process.
+  - As suggested, the file 'cran-comments.html' has been included in the '.Rbuildignore' file to ensure it does not interfere with the package building process.
 - Overall checktime 19 min > 10 min. Please reduce to max 10 min.
-  - The check time has been reduced by optimizing the impute_data function, resulting in faster execution. Additionally, some tests have been streamlined, and the vignette has been excluded via .Rbuildignore to comply with the check time requirement.
+  - The check time has been reduced by optimizing the `impute_data` function, resulting in faster execution. Additionally, some tests have been streamlined to comply with the check time requirement.
 
 
 

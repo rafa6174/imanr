@@ -1,3 +1,9 @@
+# imanr 1.0.2
+
+* After receiving feedback from previous CRAN submission, some adjustments were made.
+  * bdMaiz, the database used as basis for imputation was reduced in size to optimize the function working time.
+  * The examples and tests were adjusted so that installation time is shorter.
+
 # imanr 1.0.1
 
 * After receiving feedback from previous CRAN submission, some adjustments were made.
