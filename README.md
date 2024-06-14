@@ -61,7 +61,8 @@ find_racial_complex(data31)
 
 ### R packages required for running imanr
 
-- Required: missForest, caret, ranger, dplyr, parallel, doSNOW
+- Required: missForest, caret, ranger, dplyr, parallel, doParallel,
+  foreach
 
 ### Participating institutions
 

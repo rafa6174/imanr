@@ -46,7 +46,7 @@ grid <- expand.grid(.mtry = c(2, 4, 6, 8, 10),  # Number of considered variables
 Model_RF_8083 <- caret::train(as.factor(Complejo.racial) ~.,
                 data = trainTransformed,
                 method = "ranger",
-                preProcess = c("center", "scale", "zv"),
+                # preProcess = c("center", "scale", "zv"),
                 trControl = fitControl,
                 tuneGrid = grid,
                 verbose = TRUE)
@@ -67,7 +67,34 @@ data31 <- bdMaiz[c(120:151), c(4:64)]
 
 data24 <- bdMaiz[c(164:187), c(4:64)]
 
-usethis::use_data(PreProcess, Model_RF_8083, bdMaiz,
+# Prepare the database that will be used as basis for impute_data ----
+# Create a list that separates each racial complex into its own dataframe
+complejos <- unique(bdMaiz$Complejo.racial)
+listacomplejos <- list()
+for(i in complejos){
+  listacomplejos[[i]] <- filter(bdMaiz, Complejo.racial == i) |>
+    #select(c(4:64)) |>
+    arrange(Longitud.de.mazorca)
+}
+
+# Fill the empty data for Chapalote. We will impute this as it doesn't have a lot of observations
+chaps_imputado <- missForest::missForest(listacomplejos$Chapalote)
+
+# Clean the table from the most abundant type of NA, then impute for still missing data
+bdMaiz_imputado <- bdMaiz |>
+  filter(!is.na(Diámetro.longitud.de.la.mazorca_recalculado)) |>
+  filter(Complejo.racial != "Chapalote") |>
+  missForest::missForest()
+
+# Merge both dataframes and save as the final data to be used in impute_data()
+bdMaiz <- bind_rows(bdMaiz_imputado$ximp, chaps_imputado$ximp) |>
+  arrange(Complejo.racial, Raza.primaria)
+
+# Calculate the imputation of data24, so that it can be used in the tests ----
+data24_imputed <- impute_data(data24, useParallel = TRUE)
+
+usethis::use_data(PreProcess, Model_RF_8083, bdMaiz, data24_imputed,
                   internal = TRUE,
                   overwrite = TRUE,
                   compress = "xz")
+

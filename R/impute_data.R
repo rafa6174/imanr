@@ -56,7 +56,7 @@ impute_data <- function(data, useParallel = FALSE){
   }
 
   # Data is cropped from the imputation dataset and then some variables are mutated
-  revised.data <- imp.data$ximp[c(18568:(18567+dim(data)[1])),]
+  revised.data <- imp.data$ximp[c(10872:(10871+dim(data)[1])),]
   revised.data[,"Hileras.por.mazorca"] <- round(revised.data[, "Hileras.por.mazorca"])
   revised.data[,"Di\u00E1metro.longitud.de.la.mazorca_recalculado"] <- revised.data[,"Diametro.de.mazorca"] / revised.data[,"Longitud.de.mazorca"]
 

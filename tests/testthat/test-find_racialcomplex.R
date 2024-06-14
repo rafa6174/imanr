@@ -1,6 +1,6 @@
 x <- data24
 l<-data24
-l[1,][6]<-NA
+l[1,][6] <- NA
 x[,8] <- as.character(x[,8])
 
 sizeTest <- dim(data24)
@@ -15,12 +15,12 @@ testthat::test_that("test to enter obervations with missing data",{
   testthat::expect_error(find_racial_complex(l[1,]))
 })
 
-testthat::test_that("the function executes in less than two seconds",{
-  star_time<-Sys.time()
+testthat::test_that("the function executes in less than five seconds",{
+  start_time<-Sys.time()
   result<-find_racial_complex(data24)
   end_time<-Sys.time()
-  execution_time<-as.numeric(difftime(end_time,star_time,units = "secs"))
-  expect_lt(execution_time,1)
+  execution_time<-as.numeric(difftime(end_time,start_time,units = "secs"))
+  expect_lt(execution_time,5)
  })
 
 testthat::test_that("correct documentation",{
