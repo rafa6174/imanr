@@ -1,6 +1,6 @@
 ## Resubmission 3
 
-── R CMD check results ────────────────────────────────────────────────────── imanr 1.0.1 ────
+── R CMD check results ────────────────────────────────────────────────────── imanr 1.0.2 ────
 Duration: 4m 33.7s
 
 ❯ checking installed package size ... NOTE
