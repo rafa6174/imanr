@@ -19,8 +19,9 @@
 #' @aliases findracialcomplex
 #' @export
 #' @importFrom stats predict
-#' @import caret
-#' @import ranger
+#' @importFrom bundle unbundle
+#' @import tidymodels
+#' @import xgboost
 #'
 #' @examples
 #' df <- find_racial_complex(data31)
@@ -28,8 +29,9 @@
 
 find_racial_complex <- function(data){
 
-  # Run data through the Random Forest model
-  prediction <- predict(Model_RF_8083, data)
+  BE_model_unbundled <- bundle::unbundle(BE_model)
+  # Run data through the Boosted Ensemble model
+  prediction <- predict(BE_model_unbundled, data)
 
   return(prediction)
 }

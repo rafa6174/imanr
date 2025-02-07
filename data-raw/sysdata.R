@@ -1,66 +1,94 @@
 ## code to prepare `sysdata` dataset goes here
 
-# Code to prepare the PreProcess values for the Random Forest model ----
+# Code to prepare the PreProcess values for the Boosted Ensemble model ----
+library(dplyr)
+library(tidymodels)
 # get the data
 bdMaiz <- readr::read_csv("~/Documentos/R/ICRaMaN/data/maices_clasificados.csv") |>
   dplyr::select(c(1:60, 69:73, 75:79, 82:87)) |>
   dplyr::select(c(1:63, 67)) |>
   dplyr::mutate(Altitud = ifelse(Altitud == 9999, NA, Altitud)) |>
+  dplyr::select(-c(1:2)) |>
+  dplyr::mutate(Complejo.racial = as.factor(Complejo.racial)) |>
   as.data.frame()
 
-bdMaiz[,2]<-as.factor(bdMaiz[,2])
-bdMaiz[,3]<-as.factor(bdMaiz[,3])
+# Imputing missing values
+na_columns <- colnames(bdMaiz)[colSums(is.na(bdMaiz)) > 0]
+no_na_columns <- colnames(bdMaiz)[colSums(is.na(bdMaiz)) == 0]
+datos_imputados <- bdMaiz
+predictores <- bdMaiz |> select(-all_of(na_columns))
+faltantes <- bdMaiz |> select(all_of(na_columns))
+
+for(col in na_columns){
+  temp_data <- bdMaiz |>
+    filter(!is.na(.data[[col]])) |>
+    select(col, no_na_columns)
+  pred <- temp_data |> select(-all_of(col))
+  target <- temp_data[[col]]
+
+  modelo <- rand_forest() |>
+    set_engine("ranger") |>
+    set_mode("regression")
+
+  workflow <- workflow() |>
+    add_model(modelo) |>
+    add_formula(as.formula(paste(col, "~ ."))) |>
+    fit(data = temp_data)
+
+  bdMaiz[is.na(bdMaiz[[col]]), col] <- predict(workflow, bdMaiz[is.na(bdMaiz[[col]]), ])
+}
 
 # set a seed and then split the data
 set.seed(42)
-inTraining <- caret::createDataPartition(bdMaiz$Complejo.racial, p = 0.70, list = FALSE)
-training <- bdMaiz[inTraining, c(3:64)] |> as.data.frame()
-testing <- bdMaiz[-inTraining, c(3:64)] |> as.data.frame()
+maiz_split <- rsample::initial_split(bdMaiz,
+                                     prop = 0.75,
+                                     strata="Complejo.racial")
+maiz_train <- rsample::training(maiz_split)
+maiz_test <- rsample::testing(maiz_split)
+
+# k-fold cross-validation
+maiz_folds <- rsample::vfold_cv(maiz_train, v = 5)
 
 
-# Prepare the preProcess values
-# We selected centering, scaling, and process zero variance data,
-# imputation is not done because we prepared a different function for that
-PreProcess <- caret::preProcess(training,
-                                method = c("center", "scale", "zv"))
+# Tuning a Boosted Ensemble model
+library(tidymodels)
+library(yardstick)
 
-trainTransformed <- predict(PreProcess, training) |> imanr::impute_data(useParallel = TRUE)
-testTransformed <- predict(PreProcess, testing) |> imanr::impute_data(useParallel = TRUE)
+boosted_untuned <- boost_tree(trees = 500,
+                              learn_rate = tune(),
+                              tree_depth= tune(),
+                              sample_size= tune()) |>
+  set_engine("xgboost") |>
+  set_mode("classification")
 
-trainTransformed <- imanr::impute_data(training, useParallel = TRUE)
-testTransformed <- imanr::impute_data(testing, useParallel = TRUE)
 
-# Train the model, waiting for the best to happen ----
-set.seed(42)
+boosted_params <- hardhat::extract_parameter_set_dials(boosted_untuned)
 
-fitControl <- caret::trainControl(method = "cv",  # Cross validation
-                           number = 10,    # Number of folds in the cross validation
-                           savePredictions = "final"
-)
+boosted_grid <- grid_random(parameters(boosted_untuned),
+                            size = 8)
 
-grid <- expand.grid(.mtry = c(2, 4, 6, 8, 10),  # Number of considered variables for each division
-                    .splitrule = "gini",
-                    .min.node.size = c(1)  # Minimun node size
-)
+boosted_tuned <- tune_grid(boosted_untuned,
+                           Complejo.racial ~ .,
+                           resamples = maiz_folds,
+                           grid = boosted_grid,
+                           metrics = metric_set(bal_accuracy, f_meas))
 
-Model_RF_8083 <- caret::train(as.factor(Complejo.racial) ~.,
-                data = trainTransformed,
-                method = "ranger",
-                # preProcess = c("center", "scale", "zv"),
-                trControl = fitControl,
-                tuneGrid = grid,
-                verbose = TRUE)
+collect_metrics(boosted_tuned, summarize=TRUE)
+autoplot(boosted_tuned)
 
-print(Model_RF_8083)
-plot(Model_RF_8083)
+boosted_final <- select_best(boosted_tuned, metric = "bal_accuracy")
+boosted_final
 
-# Testing the model
-p_RF <- predict(Model_RF_8083, newdata = testTransformed)
-confMat_RF <- caret::confusionMatrix(p_RF, as.factor(testTransformed$Complejo.racial))
-confMat_RF$overall["Accuracy"]
+boosted_best <- finalize_model(boosted_untuned,
+                               boosted_final)
+boosted_best
 
-# Save the model
-# save(Model_RF_8083, file = "./R/Model_RF_8083.rda")
+BE_model <- boosted_best |>
+  fit(Complejo.racial ~ .,,
+      data = maiz_train)
+
+print(BE_model)
+
 
 # Make slices of data for testing and using in examples ----
 data31 <- bdMaiz[c(120:151), c(4:64)]
@@ -91,9 +119,9 @@ bdMaiz <- bind_rows(bdMaiz_imputado$ximp, chaps_imputado$ximp) |>
   arrange(Complejo.racial, Raza.primaria)
 
 # Calculate the imputation of data24, so that it can be used in the tests ----
-data24_imputed <- impute_data(data24, useParallel = TRUE)
+data24_imputed <- imanr::impute_data(data24, useParallel = TRUE)
 
-usethis::use_data(PreProcess, Model_RF_8083, bdMaiz, data24_imputed,
+usethis::use_data(BE_model, bdMaiz, data24_imputed,
                   internal = TRUE,
                   overwrite = TRUE,
                   compress = "xz")

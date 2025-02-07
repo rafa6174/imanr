@@ -50,18 +50,18 @@ impute_data <- function(data, useParallel = FALSE){
     # Check that foreach backend is registered
     # foreach::getDoParRegistered()
 
-    imp.data <- bind_rows(bdMaiz[, c(4:64)], data) |>
+    imp.data <- bind_rows(bdMaiz[, c(2:62)], data) |>
       missForest::missForest(parallelize = "forests", verbose = TRUE)
 
     # Stop the cluster after computation
     parallel::stopCluster(cl)
   } else {
-    imp.data <- bind_rows(bdMaiz[, c(4:64)], data) |>
+    imp.data <- bind_rows(bdMaiz[, c(2:62)], data) |>
       missForest::missForest(verbose = TRUE)
   }
 
   # Data is cropped from the imputation dataset and then some variables are mutated
-  revised.data <- imp.data$ximp[c(10872:(10871+dim(data)[1])),]
+  revised.data <- imp.data$ximp[c(18568:(18568+dim(data)[1]-1)),]
   revised.data[,"Hileras.por.mazorca"] <- round(revised.data[, "Hileras.por.mazorca"])
   revised.data[,"Di\u00E1metro.longitud.de.la.mazorca_recalculado"] <- revised.data[,"Diametro.de.mazorca"] / revised.data[,"Longitud.de.mazorca"]
 

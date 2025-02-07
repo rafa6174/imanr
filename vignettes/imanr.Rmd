@@ -24,8 +24,8 @@ library(imanr)
 
 ## Introduction
 
-|                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                 |                                        |
-|--------------------------------------------------------|----------------|
+|  |  |
+|------------------------------------|------------------------------------|
 | **imanr** is a novel machine learning package to help producers and researchers on the identification of racial complexes for native corn from Mexico which is fundamental to enhance the understanding of the distribution and characteristics of native corn in Mexico's agriculture. The package was developed thanks to the information collected by CONABIO for the [Proyecto Global de Maíces Nativos de México](https://www.biodiversidad.gob.mx/diversidad/proyectoMaices) whose goal was to update the available information on the many different corn varieties, their geographic origin and the implications to maize genetic diversity. There are many documents that were published with this information, and so, this package aims to expand the reach of this national project by allowing for pinpointing, with a high accuracy level, the most plausible racial complexes for a corn sample. | ![](images/hex-imanr.png){width="250"} |
 
 ## Usage
@@ -47,7 +47,7 @@ These are the required fields for the model to work properly. In future versions
 
 Once the data is loaded, it can be tested with the model and the results will show the racial complex to which each sample belongs to.
 
-```{r using_find_racial_complex}
+```{r using_find_racial_complex, eval=FALSE}
 # test for racial complexes
 find_racial_complex(data31)
 
@@ -92,7 +92,7 @@ library(devtools)
 install_github(repo = "rafa6174/imanr", build_vignettes = TRUE)
 
 #> From CRAN (recommended)
-# install.packages("imanr") # not just yet...
+install.packages("imanr") 
 
 ```
 

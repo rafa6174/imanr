@@ -1,5 +1,5 @@
 x <- data24
-l<-data24
+l <- data24
 l[1,][6] <- NA
 x[,8] <- as.character(x[,8])
 
@@ -12,7 +12,7 @@ testthat::test_that("test incorrect data type", {
 })
 
 testthat::test_that("test to enter obervations with missing data",{
-  testthat::expect_error(find_racial_complex(l[1,]))
+  testthat::expect_no_error(find_racial_complex(l[1,]))
 })
 
 testthat::test_that("the function executes in less than five seconds",{
@@ -26,3 +26,4 @@ testthat::test_that("the function executes in less than five seconds",{
 testthat::test_that("correct documentation",{
   expect_silent(help("find_racial_complex"))
 })
+
