@@ -1,3 +1,18 @@
+# imanr 2.0.0
+
+## Major Updates
+- **Replaced Random Forest model with Boosted Ensemble**  
+  - The package now uses a **Boosted Ensemble (XGBoost)** model instead of the previous **Random Forest**.  
+  - This transition **increases accuracy while reducing model size**, significantly improving efficiency.  
+
+- **Enhanced computational performance**  
+  - Model inference is now **faster and more memory-efficient**.  
+  - The package remains fully functional while requiring significantly less storage.  
+
+## Bug Fixes & Improvements
+- Optimized data handling and model integration for improved usability.  
+- Minor updates to documentation and internal functions.  
+
 # imanr 1.0.2
 
 * After receiving feedback from previous CRAN submission, some adjustments were made.

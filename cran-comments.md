@@ -1,3 +1,23 @@
+## Update to imanr 2.0.0
+
+── R CMD check results ───────────────────────────────────────────────── imanr 2.0.0 ────
+Duration: 12m 24.6s
+
+❯ checking installed package size ... NOTE
+    installed size is  5.3Mb
+    sub-directories of 1Mb or more:
+      R   4.7Mb
+
+This is a major update that optimizes the package by replacing an excessively large Random Forest model (~58MB) with a much lighter and more efficient Boosted Ensemble model (~5MB).
+
+Due to the nature of the model included in the 'sysdata.rda' file, which is essential for the primary functionality of the package, we were unable to reduce the size below 5 MB despite extensive efforts to compress and optimize the data. The new model, a Boosted Ensemble trained using the `xgboost` package, replaces the previous Random Forest model. This transition significantly improves computational efficiency and predictive accuracy.
+
+Including the model within the package is crucial to ensuring a seamless user experience. Externalizing it would require additional steps for data acquisition, potentially degrading usability and limiting accessibility, particularly for offline users.
+
+Therefore, we kindly request an exemption from the 5MB size limit due to these technical constraints and the importance of preserving the package’s functionality and user convenience.
+
+Thank you for your time and consideration.
+
 ## Resubmission 3
 
 ── R CMD check results ────────────────────────────────────────────────────── imanr 1.0.2 ────

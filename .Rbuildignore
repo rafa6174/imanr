@@ -9,4 +9,4 @@
 ^doc$
 ^Meta$
 ^cran-comments\.html$
-
+^DataTemplate\.csv$

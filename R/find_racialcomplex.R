@@ -3,7 +3,7 @@
 #' @param data A dataset that contains qualitative and quantitative characteristics
 #' of a corn ear or series of ears. The selected characteristics are related
 #'  to colors, some measurements and the locations in which the corn was grown.
-#'  A template for what has to be filled will be included on the GitHub page of
+#'  A template for what has to be filled is included in the GitHub repo of
 #'  the project.
 #'
 #' @return \code{findraciacomplex()}
