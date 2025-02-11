@@ -24,12 +24,15 @@
 #' @import xgboost
 #'
 #' @examples
-#' df <- find_racial_complex(data31)
-#' df
+#' find_racial_complex(data24)
+#'
 
 find_racial_complex <- function(data){
 
-  BE_model_unbundled <- bundle::unbundle(BE_model)
+  # Ensure input is a base data frame
+  data <- as.data.frame(data)
+
+  # BE_model_unbundled <- bundle::unbundle(BE_model)
   # Run data through the Boosted Ensemble model
   prediction <- predict(BE_model_unbundled, data)
 

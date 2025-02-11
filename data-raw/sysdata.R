@@ -87,7 +87,9 @@ BE_model <- boosted_best |>
   fit(Complejo.racial ~ .,,
       data = maiz_train)
 
-print(BE_model)
+BE_model_unbundled <- bundle::unbundle(BE_model)
+
+# print(BE_model)
 
 
 # Make slices of data for testing and using in examples ----
@@ -121,8 +123,7 @@ bdMaiz <- bind_rows(bdMaiz_imputado$ximp, chaps_imputado$ximp) |>
 # Calculate the imputation of data24, so that it can be used in the tests ----
 data24_imputed <- imanr::impute_data(data24, useParallel = TRUE)
 
-usethis::use_data(BE_model, bdMaiz, data24_imputed,
+usethis::use_data(BE_model_unbundled, bdMaiz, data24_imputed,
                   internal = TRUE,
-                  overwrite = TRUE,
+                  overwrite= TRUE,
                   compress = "xz")
-

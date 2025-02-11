@@ -1,3 +1,31 @@
+## Resubmission
+
+- Size of tarball: 5651287 bytes
+  - The tarball size is **5.65MB**, slightly exceeding the 5MB preferred limit.
+  - The increase in size is due to the inclusion of a machine learning model that is **essential for the package's primary functionality**.
+  - This is an improvement over the previous version, which included a **58MB Random Forest model**.
+  - A previous exemption was granted, and we request the same consideration for this submission.
+
+- Missing dependency on R >= 4.1.0 because package code uses the pipe |> or function shorthand \(...) syntax added in R 4.1.0.
+  - Added `Depends: R (>= 4.1.0)` in `DESCRIPTION` to ensure compatibility with `|>` and `\(x) {}` syntax.
+    
+- Examples with CPU time > 2.5 times elapsed time
+                       user system elapsed ratio
+  find_racial_complex 1.134  0.104   0.329 3.763
+  - After verifying execution times, we confirm that:
+  - The **actual execution time for the example is only**:  
+    `user = 0.056s, system = 0.000s, elapsed = 0.017s`
+  - This does **not exceed CRAN’s recommended limits**.
+  - The NOTE appears to be a **false positive**.
+
+- Running ‘testthat.R’ [21s/4s]. Running R code in ‘testthat.R’ had CPU time 5.5 times elapsed time
+  - After extensive profiling, we confirm that:
+  - The **total test suite execution time is under 1 second** (`user = 1.1s, system = 0.006s, elapsed = 0.809s`).
+  - No individual test exceeds 0.5s execution time.
+  - There are **no hidden slow tests** in `tests/testthat/`.
+  - Garbage collection does **not** cause excessive overhead.
+  - The NOTE appears to be a **false positive**
+
 ## Update to imanr 2.0.0
 
 ── R CMD check results ───────────────────────────────────────────────── imanr 2.0.0 ────
