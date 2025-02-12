@@ -10,7 +10,7 @@ testthat::test_that("missing data",{
   testthat::expect_equal(sum(is.na(data24_imputed)), 0)
 })
 
-testthat::test_that("correct dimentions",{
+testthat::test_that("correct dimensions",{
   testthat::expect_identical(dim(data24_imputed), sizeTest)
 })
 

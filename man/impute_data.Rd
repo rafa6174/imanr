@@ -27,9 +27,7 @@ in this same package.
 }
 \examples{
 \donttest{
-set.seed(42)
 df <- data24[17,]
-df
 
 df_imp <- impute_data(df, useParallel = FALSE)
 df_imp

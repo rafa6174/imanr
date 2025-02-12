@@ -123,7 +123,7 @@ bdMaiz <- bind_rows(bdMaiz_imputado$ximp, chaps_imputado$ximp) |>
 # Calculate the imputation of data24, so that it can be used in the tests ----
 data24_imputed <- imanr::impute_data(data24, useParallel = TRUE)
 
-usethis::use_data(BE_model_unbundled, bdMaiz, data24_imputed,
+usethis::use_data(bdMaiz, data24_imputed,
                   internal = TRUE,
                   overwrite= TRUE,
                   compress = "xz")

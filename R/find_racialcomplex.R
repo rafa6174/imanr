@@ -24,17 +24,23 @@
 #' @import xgboost
 #'
 #' @examples
-#' find_racial_complex(data24)
+#' \dontrun{
+#' find_racial_complex(data24)#'
+#' }
 #'
 
 find_racial_complex <- function(data){
 
+  # Ensure the model is available
+  if(is.null(imanr_env$BE_model_unbundled)){
+    stop("The Boosted Ensemble model is not loaded.")
+  }
+
   # Ensure input is a base data frame
   data <- as.data.frame(data)
 
-  # BE_model_unbundled <- bundle::unbundle(BE_model)
   # Run data through the Boosted Ensemble model
-  prediction <- predict(BE_model_unbundled, data)
+  prediction <- predict(imanr_env$BE_model_unbundled, data)
 
   return(prediction)
 }

@@ -1,4 +1,59 @@
+## Resubmission 2
+
+Thank you for reviewing our submission of `imanr 2.0.0`. We appreciate your time and effort in considering our package.
+
+### R CMD check results 
+
+----
+
+**Package**: imanr 2.0.0
+**Duration**: 9m 52.4s
+
+0 errors ✔ | 0 warnings ✔ | 0 notes ✔
+
+#### Package size NOTE
+**Tarball size**: 5.65MB
+
+**Resolution**
+
+- Previously, the package exceeded the preferred size limit due to the presence of a large machine learning model stored in `/R/sysdata.rda`.  
+- This has been resolved by **hosting the model externally on GitHub Releases**. The package now **downloads and loads the model dynamically** upon package use, significantly reducing its size.
+  
+#### Example execution time NOTE
+
+Examples with CPU time > 2.5 times elapsed time
+
+|                     | user  | system | elapsed | ratio |
+|:--- |:--- |:--- |:--- |:--- |
+| find_racial_complex | 2.367 | 0.14   | 0.28    | 8.954 |
+
+**Resolution**
+
+- The example for `find_racial_complex()` requires downloading the model before execution.  
+- To prevent execution time issues, the example has been **wrapped in `\dontrun{}`** so that CRAN does not run it during checks.
+
+#### Test execution time NOTE
+
+Running 'testthat.R' [17s/3s]
+
+Running R code in 'testthat.R' had CPU time 5.8 times elapsed time
+
+**Resolution**
+
+- We have optimized the tests for `find_racial_complex()` to **reduce computation time while maintaining testing rigor**.
+- This includes **reducing dataset sizes** and **minimizing redundant operations**, ensuring efficient execution.
+  
+----
+
+
 ## Resubmission
+
+── R CMD check results ───────────────────────────────────────────────────── imanr 2.0.0 ────
+Duration: 1m 23.6s
+
+0 errors ✔ | 0 warnings ✔ | 1 note ✖
+
+Thanks for reviewing our package submission. In consideration for the received comments we have:
 
 - Size of tarball: 5651287 bytes
   - The tarball size is **5.65MB**, slightly exceeding the 5MB preferred limit.
@@ -25,6 +80,8 @@
   - There are **no hidden slow tests** in `tests/testthat/`.
   - Garbage collection does **not** cause excessive overhead.
   - The NOTE appears to be a **false positive**
+
+
 
 ## Update to imanr 2.0.0
 
